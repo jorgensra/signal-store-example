@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { countState } from './signal-state/signal-state';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  providers: [countState],
 })
 export class App {
+  readonly countState = inject(countState);
   protected title = 'signal-store-example';
 }
