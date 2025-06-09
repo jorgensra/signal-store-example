@@ -1,6 +1,8 @@
 Count: {{ countState.count() }}
-
-<button (click)="countState.increment()">Increment</button>
-<button (click)="countState.decrement()">Decrement</button>
-
-<app-other-page></app-other-page>
+<div>
+  You can only go down from here:
+  <button (click)="countState.decrement()">Decrement</button>
+</div>
+<br />
+<br />
+<app-other-page />
